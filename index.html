@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Webapp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="start-screen" id="startScreen">
+            <h1>🎯 Quiz Challenge</h1>
+            <p>Test your skills with 10 exciting questions!</p>
+            <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div class="quiz-screen" id="quizScreen">
+            <div class="quiz-header">
+                <div class="question-counter" id="questionCounter">Question 1 of 10</div>
+            </div>
+            
+            <!-- <div class="progress-bar"> -->
+                <div class="progress-fill" id="progressFill"></div>
+            <!-- </div> -->
+
+            <div class="question-text" id="questionText"></div>
+
+            <div class="options" id="optionsContainer"></div>
+
+            <div class="navigation" id="navigationButtons">
+                <button class="nav-btn prev-btn" id="prevBtn" onclick="previousQuestion()">← Previous</button>
+                <button class="nav-btn next-btn" id="nextBtn" onclick="nextQuestion()">Next →</button>
+            </div>
+
+            <button class="submit-btn hidden" id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="popup-icon">✓</div>
+            <h2>Success!</h2>
+            <p>Your Progress Is Submitted.</p>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
