@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Quiz</title>
+
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode Toggle -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+
+    <h1 id="quizTitle">Loading quiz...</h1>
+
+    <div class="question-box" id="quizBox" style="display:none;">
+      <p id="questionText"></p>
+
+      <p class="timer-text">
+        Time Left: <span id="timer">--</span> seconds
+      </p>
+
+      <div id="options"></div>
+
+      <button class="next-btn" id="nextBtn" style="display:none;">Next</button>
+    </div>
+
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/quiz.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

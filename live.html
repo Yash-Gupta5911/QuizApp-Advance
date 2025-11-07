@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join Live Quiz | QuizVerse</title>
+
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+
+    <!-- ✅ JOIN PANEL -->
+    <div id="joinPanel" class="box-card">
+      <h2>🚀 Join Live Room</h2>
+
+      <input id="roomCode" placeholder="Room Code">
+      <input id="playerName" placeholder="Your Name">
+
+      <button id="joinBtn" class="home-btn" style="margin-top:10px;">
+        Join Room
+      </button>
+    </div>
+
+    <!-- ✅ QUIZ PLAY UI -->
+    <div id="playPanel" class="box-card" style="display:none;">
+      <h3 id="questionTitle">Waiting for host…</h3>
+
+      <p class="muted">⏳ Time Left: <span id="timer">--</span> seconds</p>
+
+      <div id="options"></div>
+
+      <p id="status" class="muted" style="margin-top:12px;"></p>
+    </div>
+
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/live.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

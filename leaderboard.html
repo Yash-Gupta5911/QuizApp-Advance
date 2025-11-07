@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard 🏆 | QuizVerse</title>
+
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <h1>🏆 Quiz Leaderboard</h1>
+    <h3 id="quizTitle"></h3>
+
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Score</th>
+          <th>Submitted At</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboardBody">
+        <tr><td colspan="4">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/leaderboard.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

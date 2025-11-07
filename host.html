@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Host Console | QuizVerse</title>
+
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+
+    <div class="host-panel">
+      <h2>🎤 Host a Live Room</h2>
+
+      <div class="row">
+        <label>Quiz ID:
+          <input id="quizId" placeholder="Enter Quiz ID">
+        </label>
+        <button id="createRoomBtn" class="home-btn">Create Room</button>
+        <span id="roomInfo" class="badge"></span>
+      </div>
+
+      <div class="row" style="margin-top:16px;">
+        <button id="startBtn" class="home-btn" disabled>Start</button>
+        <button id="nextBtn" class="home-btn" disabled>Next</button>
+        <button id="endBtn" class="logout-btn" disabled>End</button>
+      </div>
+
+      <h3 style="margin-top:20px;">👥 Players</h3>
+      <table>
+        <thead><tr><th>Name</th><th>Score</th></tr></thead>
+        <tbody id="playersBody"><tr><td colspan="2">No players yet</td></tr></tbody>
+      </table>
+
+      <h3 style="margin-top:20px;">📣 Broadcast</h3>
+      <div id="broadcastState" class="muted">Waiting...</div>
+
+      <h3 style="margin-top:20px;">📝 Answer Summary</h3>
+      <div id="summaryBox" class="muted">Waiting...</div>
+
+      <h3 style="margin-top:20px;">📱 QR Code</h3>
+      <canvas id="qrCanvas"></canvas>
+
+    </div>
+
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/host.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

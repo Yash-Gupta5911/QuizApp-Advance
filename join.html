@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Quiz | QuizVerse</title>
+
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode Toggle -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <h1>Join Quiz</h1>
+
+    <form id="joinForm">
+      <input type="text" id="playerName" placeholder="Your Name" required />
+      <input type="text" id="quizCode" placeholder="Quiz Code" required />
+      <button type="submit" class="home-btn" style="margin-top:20px;">
+        Join Quiz
+      </button>
+    </form>
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/join.js"></script>
+  <script src="./assets/theme.js"></script>
+</body>
+</html>

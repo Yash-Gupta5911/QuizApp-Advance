@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Questions | QuizVerse</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode Toggle -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <h2>Add Questions</h2>
+
+    <input id="question" placeholder="Enter question text" />
+
+    <label style="margin-top:10px; display:block;">
+      Question Image (optional):
+      <input type="file" id="questionImage">
+    </label>
+
+    <!-- ✅ Excel Import Button (fixed dynamically in JS) -->
+    <button id="importBtn" style="background:#764ba2;margin-top:20px;">
+      📥 Import from Excel
+    </button>
+
+    <h3 style="margin-top:20px;">Options</h3>
+    <div id="optionsList"></div>
+
+    <button id="addOptionBtn" style="margin-top:10px;">➕ Add Option</button>
+
+    <label style="display:block;margin-top:20px;">
+      Correct Option:
+      <select id="correctIndex"></select>
+    </label>
+
+    <button id="addBtn" style="margin-top:20px;">Save Question</button>
+    <button id="finishBtn" style="background:green;margin-top:10px;">
+      ✅ Finish Quiz
+    </button>
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/add-questions.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

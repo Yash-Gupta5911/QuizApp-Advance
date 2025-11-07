@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Quiz | QuizVerse</title>
+
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode Toggle -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- ✅ Create Quiz UI -->
+  <div class="create-container">
+    <h2>Create a New Quiz</h2>
+
+    <input id="quizTitle" placeholder="Quiz Title" required />
+    <textarea id="quizDesc" placeholder="Quiz Description"></textarea>
+
+    <label style="display:block; margin-top:10px;">
+      <input type="checkbox" id="quizPublic" /> Make this quiz public
+    </label>
+
+    <button id="saveQuizBtn">Create Quiz</button>
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/create.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

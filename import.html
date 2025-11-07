@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Import Quiz from Excel</title>
+
+  <link rel="stylesheet" href="./assets/styles.css">
+
+  <!-- Excel Parser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ✅ Dark Mode Toggle -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <div class="box-card">
+      <h2>📥 Import Quiz from Excel</h2>
+
+      <p>Upload an Excel (.xlsx) file with these columns:</p>
+
+      <pre class="import-guide">
+question
+question_image (optional)
+options (comma separated)
+option_images (comma separated optional)
+correct_index (0-based)
+      </pre>
+
+      <input type="file" id="fileInput" accept=".xlsx" />
+
+      <button id="importBtn" class="home-btn" style="margin-top:20px;">
+        Import Questions
+      </button>
+    </div>
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/import.js"></script>
+  <script src="./assets/theme.js"></script>
+
+</body>
+</html>

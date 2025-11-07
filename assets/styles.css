@@ -1,0 +1,415 @@
+/* =========================================
+   GLOBAL THEME VARIABLES
+========================================= */
+
+:root {
+  --bg: #ffffff;
+  --bg2: #f0f2ff;
+  --text: #111;
+  --text2: #444;
+  --card: #ffffff;
+  --border: #ddd;
+
+  --primary: linear-gradient(135deg,#667eea,#764ba2);
+  --danger: linear-gradient(135deg,#f857a6,#ff5858);
+  --green: linear-gradient(135deg,#34d399,#10b981);
+}
+
+/* DARK MODE */
+.dark {
+  --bg: #0d1117;
+  --bg2: #161b22;
+  --text: #e6e6e6;
+  --text2: #9ca3af;
+  --card: #1e2631;
+  --border: #30363d;
+}
+
+/* =========================================
+   GLOBAL LAYOUT
+========================================= */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1, h2, h3 {
+  color: var(--text);
+}
+
+p {
+  color: var(--text2);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+  cursor: pointer;
+}
+
+.home-btn {
+  padding: 15px 40px;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.logout-btn {
+  background: var(--danger);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.logout-btn:hover {
+  opacity: 0.85;
+}
+
+/* =========================================
+   PUBLIC QUIZ CARDS
+========================================= */
+
+.public-quizzes {
+  margin-top: 50px;
+}
+
+.quiz-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quiz-card:hover {
+  background: var(--bg2);
+}
+
+/* =========================================
+   AUTH MODAL
+========================================= */
+
+.auth-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: slideUp 0.3s ease;
+}
+
+.auth-box input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+}
+
+.auth-box button {
+  width: 100%;
+  margin-top: 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================
+   OPTION BOXES
+========================================= */
+
+.option {
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  transition: 0.3s;
+}
+
+.option:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.option img {
+  width: 120px;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+
+/* =========================================
+   QUESTION BOX (play screen)
+========================================= */
+
+.question-box {
+  max-width: 600px;
+  margin: auto;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.timer-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--text2);
+}
+
+.next-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* =========================================
+   BOX-CARD COMPONENT (general)
+========================================= */
+
+.box-card {
+  max-width: 700px;
+  margin: 20px auto;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+/* =========================================
+   HOST PANEL
+========================================= */
+
+.host-panel {
+  max-width: 900px;
+  margin: auto;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.badge {
+  background: var(--bg2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: var(--text2);
+}
+
+/* =========================================
+   TABLE STYLING
+========================================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* =========================================
+   OPTION SUMMARY (host)
+========================================= */
+
+.option-summary {
+  background: var(--bg2);
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+}
+
+/* =========================================
+   SCOREBOARD (host + live)
+========================================= */
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 18px;
+  margin: 8px 0;
+  border-radius: 10px;
+  background: var(--bg2);
+  animation: popIn 0.5s forwards;
+}
+
+.score-row:nth-child(1) { background: #ffeb3b55; }
+.score-row:nth-child(2) { background: #c0c0c055; }
+.score-row:nth-child(3) { background: #cd7f3255; }
+
+@keyframes popIn {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.leaderboard-table th {
+  padding: 12px 16px;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+}
+
+.leaderboard-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  color: var(--text);
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background: var(--bg2);
+}
+
+.leaderboard-table tr {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* =========================================
+   DARK MODE SWITCH
+========================================= */
+
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.themeToggle {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 28px;
+}
+
+.themeToggle input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #777;
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #4ade80;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .home-btn {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .question-box {
+    padding: 20px;
+  }
+}

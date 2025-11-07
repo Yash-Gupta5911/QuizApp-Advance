@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Webapp</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizVerse 🎯</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+
+  <!-- Theme Toggle Styles (built into styles.css) -->
 </head>
 <body>
-    <div class="container">
-        <div class="start-screen" id="startScreen">
-            <h1>🎯 Quiz Challenge</h1>
-            <p>Test your skills with 10 exciting questions!</p>
-            <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
-        </div>
 
-        <div class="quiz-screen" id="quizScreen">
-            <div class="quiz-header">
-                <div class="question-counter" id="questionCounter">Question 1 of 10</div>
-            </div>
-            
-            <!-- <div class="progress-bar"> -->
-                <div class="progress-fill" id="progressFill"></div>
-            <!-- </div> -->
+  <!-- ✅ Dark Mode Switch -->
+  <div class="theme-toggle-container">
+    <label class="themeToggle">
+      <input type="checkbox" id="themeSwitch" />
+      <span class="slider"></span>
+    </label>
+  </div>
 
-            <div class="question-text" id="questionText"></div>
+  <!-- ✅ Main Container -->
+  <div class="container" style="text-align:center;">
+    <h1>🎯 Welcome to QuizVerse</h1>
+    <p>Challenge your friends, create your own quizzes, and rise on the leaderboard!</p>
 
-            <div class="options" id="optionsContainer"></div>
-
-            <div class="navigation" id="navigationButtons">
-                <button class="nav-btn prev-btn" id="prevBtn" onclick="previousQuestion()">← Previous</button>
-                <button class="nav-btn next-btn" id="nextBtn" onclick="nextQuestion()">Next →</button>
-            </div>
-
-            <button class="submit-btn hidden" id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
-        </div>
+    <!-- ✅ Auth Section -->
+    <div id="authSection">
+      <button class="home-btn" id="loginBtn">🔑 Login / Signup</button>
     </div>
 
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup">
-            <div class="popup-icon">✓</div>
-            <h2>Success!</h2>
-            <p>Your Progress Is Submitted.</p>
-            <button class="close-btn" onclick="closePopup()">Close</button>
-        </div>
+    <!-- ✅ Creator Options (shown only when logged in) -->
+    <div class="home-options" id="creatorOptions" style="display:none;">
+      <h3>👋 Hello, <span id="userName"></span></h3>
+
+      <button class="home-btn" onclick="location.href='create.html'">🧩 Create a Quiz</button>
+      <button class="home-btn" onclick="location.href='host.html'">🎤 Host a Live Room</button>
+
+      <button class="logout-btn" id="logoutBtn">Logout</button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- ✅ Join Quiz (everyone) -->
+    <div class="home-options">
+      <button class="home-btn" onclick="location.href='join.html'">🚀 Join a Quiz</button>
+    </div>
+
+    <!-- ✅ Public Quizzes Section -->
+    <div class="public-quizzes">
+      <h2>🌍 Public Quizzes</h2>
+      <div id="quizList">Loading...</div>
+    </div>
+  </div>
+
+  <!-- ✅ Auth Modal -->
+  <div class="auth-modal" id="authModal">
+    <div class="auth-box">
+      <h2 id="authTitle">Login / Signup</h2>
+      <input type="email" id="authEmail" placeholder="Email" required />
+      <input type="password" id="authPassword" placeholder="Password" required />
+      <button id="authActionBtn">Continue</button>
+      <p id="authToggle" class="auth-toggle-text">
+        Don’t have an account? Sign up
+      </p>
+    </div>
+  </div>
+
+  <!-- ✅ External Scripts -->
+  <script type="module" src="./assets/db.js"></script>
+  <script type="module" src="./assets/index.js"></script>
+  <script src="./assets/theme.js"></script>
+
 </body>
 </html>
